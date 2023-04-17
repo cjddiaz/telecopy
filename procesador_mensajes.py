@@ -45,8 +45,6 @@ def procesar_mensaje(message):
     leverage = " Cross 20x"
 
     # Obtener el precio de entrada y el primer objetivo de precio
-    ult_entry_array = len(entry_array) - 1
-    entry = entry_array[0] + " - " + entry_array[ult_entry_array]
     entry_unico = float(entry_array[0])
     target_unico = float(target_array[0])
 
@@ -60,6 +58,13 @@ def procesar_mensaje(message):
         direction="SHORT"
 
     stop_loss = float(stop_loss)
+
+    ult_entry_array = len(entry_array) - 1
+
+    if direction == "LONG":
+        entry = entry_array[ult_entry_array] + " - " + entry_array[0]
+    else:
+        entry = entry_array[0] + " - " + entry_array[ult_entry_array]
 
     # Determinar si el stop loss y los objetivos de precio son parametrizables
     parametrizable = False
