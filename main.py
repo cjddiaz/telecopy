@@ -8,7 +8,7 @@ from enviar_mensajes import reenviar_mensajes
 # Iniciamos la sesión del cliente y ejecutamos las funciones
 if __name__ == "__main__":
     # Pedimos al usuario que ingrese su número de teléfono
-    numero_telefono = input("Ingrese su número de teléfono con código de país (ejemplo: +1234567890): ")
+    numero_telefono = +18299281554
 
     loop = asyncio.get_event_loop()
     client = loop.run_until_complete(iniciar_sesion(numero_telefono))
